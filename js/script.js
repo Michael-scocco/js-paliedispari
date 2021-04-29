@@ -1,86 +1,81 @@
-// console.log('hello');
-// REPO: js-paliedispari
-// GOAL:
-
-// Una funzione per capire se la parola è palindroma
-
-// se l'utente inserisce una parola, la funzione capisce se è palindroma o meno;
-
-
-var parolaUtente = prompt('dammi una parola palindroma');
-
-function controllaParola(parolaUtente) {
-
-    var parolaData = parolaUtente.length;// conto la lunghezza dei caratteri della parola
-    console.log(parolaUtente + ' la parola è formata da numero caratteri ' + parolaData);
-
-    var parolaRisulta = Math.floor(parolaData / 2);//divido la parola in due, metto il floor perchè voglio una divisione senza virgola
-    console.log('la parola una volta divisa risulta ' + parolaRisulta);
-
-    for (var i = 0; i < parolaRisulta; i++) {
-
-        if (parolaUtente.charAt(i) !== parolaUtente.charAt(parolaData - 1 - i) ) {
-            return false;
-        }
-    }
-    return true;
-}
-var risultaVero = controllaParola(parolaUtente);
-console.log(risultaVero);
-
-// _____________________________________________________________________________
-
-// esercizio n°2
-// L'utente sceglie pari o dispari e un numero da 1 a 5.
-// Generiamo un numero random (sempre da 1 a 5) per il computer.
-// stabiliamo se la somma dei due numeri è pari o dispari. Sommiamo i due numeri e dichiariamo chi ha vinto.
+/*
+Palidroma:
+Chiedere all’utente di inserire una parola Creare una funzione per capire se la parola inserita è palindroma
+Pari e Dispari:
+L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
+Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
+Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
+Dichiariamo chi ha vinto.
+Consigli del giorno
+Scriviamo sempre in italiano i passaggi che vogliamo fare
+Scriviamo sempre solo un pezzetto di codice alla volta, se funziona allora andiamo avanti.
+Se non sappiamo cos'é una parola palindroma Googliamo!
+*/
 
 
-var sceltaUtente = prompt('cosa scegli');
-console.log('l\'utente ha scelto ' + sceltaUtente);
-
-function generaNumeriCasuali(min, max) {
-
-    var valoreMin = min;
-    var valoreMax = max - valoreMin +1;
-
-    var numeroCasuale = Math.floor(Math.random() *valoreMax ) + 1;
-
-    return numeroCasuale;
-}
-
-function giocoPariDispari(sceltaUtente) {
-
-    var numeroCasualeGiocatore = generaNumeriCasuali(1, 5)
-    console.log('numero giocatore ' + numeroCasualeGiocatore);
-
-    var numeroCasualePc = generaNumeriCasuali(1, 5)
-    console.log('numero pc ' + numeroCasualePc);
-
-    var somma = numeroCasualeGiocatore + numeroCasualePc;
-    console.log('il numero del giocatore ' + numeroCasualeGiocatore +
-    ' + ' + numeroCasualePc + ' il numero del pc, è = ' + somma);
 
 
-    var risultato;
 
-    if (somma % 2 == 0 && sceltaUtente === 'pari') {
-        risultato = true;
-        console.log(risultato + ' il numero è pari l\'utente ha vinto ha scelto ' + sceltaUtente);
-    }else if (somma % 2 == 1 && sceltaUtente === 'dispari') {
-        risultato = true;
-        console.log(risultato + ' il numero è dispari l\'utente ha vinto ha scelto ' + sceltaUtente);
-    }else if (sceltaUtente === somma % 2 == 1) {
-        risultato = false;
-        console.log(risultato + ' l\'utente ha perso ha ha scelto dispari');
-    }else {
-        risultato = false;
-        console.log(risultato + ' l\'utente ha perso ha scelto pari');
-    }
 
-return risultato;
+
+// 1. Chiedere all’utente di inserire una parola
+    var parolaUtente = prompt('vediamo se è palindroma');
+// 1.1 facciamo in modo che qualunque parola sia sempre in minuscolo
+    parolaUtente = parolaUtente.toLowerCase();
+    console.log(parolaUtente);
+
+// 1.2 adesso devo separare ogni carattere e creare un nuovo array
+// Separare ogni carattere,
+// questo si ottiene inserendo i doppi apici dentro la parentesi di split
+var parolaDivisa = parola.split('');
+console.log(parolaDivisa);
+
+// 2. Creare una funzione per capire se la parola inserita è palindroma
+// 2.1 per prima cosa controllo con il metodo reverse, cioè rovescia un array,
+//     se la parola corrisponde
+var parolaDivisa = parolaDivisa.reverse();
+console.log(parolaDivisa);
+
+
+// dopo di che riconverto la parola in una stringa, con la funzione join,
+// ma sempre mettendo gli apici al suo interno.
+
+// Se dentro le tonde mettessi (e),
+// le parole all'interno dell'array saranno separate dalla parole e.
+
+// Se invece nelle ()lascio vuoto,
+// le parole dell'array saranno separate in automatico da una virgola
+
+var parolaInvertita = parolaDivisa.join('');
+console.log(parolaInvertita);
+
+// quindi ora non devo fare altro che confrontare la parola dell'utente
+// con la parola invertita, data dalla funzione join.
+
+if(parola == parolaInvertita){
+  console.log('la parola è palindroma');
+} else {
+  console.log('la parola non è palindroma');
+
 }
 
-var risultato = giocoPariDispari(sceltaUtente)
-console.log(risultato);
-// _____________________________________esercizi per casa parola palindroma-->
+function parolaPalindroma(parolaUtente) {
+
+}
+
+
+
+
+
+
+/*
+Pari e Dispari:
+L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
+Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
+Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
+Dichiariamo chi ha vinto.
+Consigli del giorno
+Scriviamo sempre in italiano i passaggi che vogliamo fare
+Scriviamo sempre solo un pezzetto di codice alla volta, se funziona allora andiamo avanti.
+Se non sappiamo cos'é una parola palindroma Googliamo!
+*/
