@@ -173,8 +173,12 @@ var palindromaWhile = parolaPalindroma4(parolaUtente);
 console.log(palindromaWhile);
 */
 
-/*
+
+
+/***************
 Pari e Dispari:
+***************/
+/*
 L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
 Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
 Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
@@ -199,47 +203,64 @@ function generatoreRandom(min, max) {
     return Math.floor(Math.random()* (max - min + 1) + min);
 
 }
-var randomPc = generatoreRandom(1, 5);
+var playerPc = generatoreRandom(1, 5);
 console.log(randomPc);
 
 // 3.0 Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 
-var sum = numeroUtente + randomPc;
-console.log('questa è la somma ' + sum);
-/*
-function PariDispari(numeroUtente, randomPc) {
 
-    var sum = numeroUtente + randomPc;
+
+function PariDispari(decisioneUtente, randomPc) {
+
+    var sum = decisioneUtente + randomPc;
     console.log('questa è la somma ' + sum);
 
     var risultato = '';
 
     if (sum % 2 == 0) {
-        risultato = ' pari';
+        risultato = 'pari';
         // console.log(risultato);
     }else {
-        risultato = ' dispari';
+        risultato = 'dispari';
         // console.log(risultato);
     }
 
 return risultato;
 }
-var risultato = PariDispari(numeroUtente, randomPc);
+var risultato = PariDispari(numeroUtente, playerPc);
 console.log(risultato);
-*/
+
 // 4.0 Dichiariamo chi ha vinto.
+
 var vince = '';
 
-if (sum % 2 == 0 && sceltaUtente === 'pari') {
+if (risultato === 'pari' && sceltaUtente === 'pari') {
     vince = `ha vinto il player con il risultato pari ed il numero che ha scelto era ${numeroUtente}`;
 
-}else if (sum % 2 == 1 && sceltaUtente === 'dispari') {
+}else if (risultato === 'dispari' && sceltaUtente === 'dispari') {
     vince = `ha vinto il player con il risultato dispari ed il numero che ha scelto era ${numeroUtente}`;
 
-}else if (sceltaUtente === 'dispari' && sum % 2 == 0 ) {
+}else if (sceltaUtente === 'dispari' && risultato === 'pari' ) {
     vince = `ha vinto il pc con il risultato pari ed il numero era ${randomPc}`;
 
-}else if (sceltaUtente === 'pari' && sum % 2 == 1) {
+}else if (sceltaUtente === 'pari' && risultato === 'dispari') {
     vince = `ha vinto il pc con il risultato dispari ed il numero era ${randomPc}`;
 }
+
+
+
+// var sum = numeroUtente + randomPc;
+// console.log('questa è la somma ' + sum);
+// if (sum % 2 == 0 && sceltaUtente === 'pari') {
+//     vince = `ha vinto il player con il risultato pari ed il numero che ha scelto era ${numeroUtente}`;
+//
+// }else if (sum % 2 == 1 && sceltaUtente === 'dispari') {
+//     vince = `ha vinto il player con il risultato dispari ed il numero che ha scelto era ${numeroUtente}`;
+
+// }else if (sceltaUtente === 'dispari' && sum % 2 == 0 ) {
+//     vince = `ha vinto il pc con il risultato pari ed il numero era ${randomPc}`;
+//
+// }else if (sceltaUtente === 'pari' && sum % 2 == 1) {
+//     vince = `ha vinto il pc con il risultato dispari ed il numero era ${randomPc}`;
+
 console.log(vince);
