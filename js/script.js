@@ -61,7 +61,7 @@ if(parolaUtente == parolaInvertita){
 /*****************************
 // VERSIONE 1 metodi separati*
 *****************************/
-/*
+
 function parolaPalindroma1(inserisciParola){
 
     inserisciParola = inserisciParola.toLowerCase();
@@ -80,13 +80,12 @@ function parolaPalindroma1(inserisciParola){
 
 // var palindroma = parolaPalindroma(parolaUtente);
 // console.log(palindroma);
-*/
 
 /******************************
 // VERSIONE 2 metodi COMPRESSI*
 ******************************/
 
-/*
+
 function parolaPalindroma2(inserisciParola){
 
     var verifica = inserisciParola.toLowerCase().split('').reverse().join('');
@@ -103,14 +102,14 @@ return risultato;
 }
 // var palindroma = parolaPalindroma2(parolaUtente);
 // console.log(palindroma);
-*/
+
 
 
 /***************************
 //  VERSIONE 3 versione FOR*
 ***************************/
 
-/*
+
 function parolaPalindroma3(parolaUtente) {
 
     // devo fare un ciclo che rovescia la parola, quindi un for inverso.
@@ -136,13 +135,13 @@ function parolaPalindroma3(parolaUtente) {
 
 var palindromaFor = parolaPalindroma3(parolaUtente);
 console.log(palindromaFor);
-*/
+
 
 /*****************************
 //  VERSIONE 4 versione while*
 *****************************/
 
-/*
+
 function parolaPalindroma4(parolaUtente) {
 
     var i = parolaUtente.length - 1;
@@ -171,7 +170,7 @@ return 'risultato ' + parola;
 
 var palindromaWhile = parolaPalindroma4(parolaUtente);
 console.log(palindromaWhile);
-*/
+
 
 
 
@@ -204,7 +203,7 @@ function generatoreRandom(min, max) {
 
 }
 var playerPc = generatoreRandom(1, 5);
-console.log(randomPc);
+console.log(playerPc);
 
 // 3.0 Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 
